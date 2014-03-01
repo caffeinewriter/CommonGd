@@ -6,9 +6,9 @@
 		"pass": ""
 		},
 	"charities": {
-		"all": ["archive","bitcoin100","fsf","peacegeeks","riseup","wikileaks"],
+		"all": ["archive","bitcoin100","fsf","peacegeeks","pizza","riseup","wikileaks"],
 		"archive": {
-			"name": "The Internet Archive",
+			"name": "Archive.org",
 			"addr": "1Archive1n2C579dMsAu3iC6tWzuQJz8dN",
 			"desc": "The Internet Archive, a 501(c)(3) non-profit, is building a digital library of Internet sites and other cultural artifacts in digital form. Like a paper library, we provide free access to researchers, historians, scholars, the print disabled, and the general public.",
 			"web": "https://archive.org/"
@@ -16,7 +16,7 @@
 		"bitcoin100": {
 			"name": "Bitcoin100",
 			"addr": "1BTC1oo1J3MEt5SFj74ZBcF2Mk97Aah4ac",
-			"desc": "Bitcoin100 exists specifically to convince new charities to start accepting bitcoin donations.",
+			"desc": "Bitcoin100 exists specifically to convince new charities to start accepting bitcoin donations by helping them get their first Bitcoin donations.",
 			"web": "http://bitcoin100.org"
 		},
 		"fsf": {
@@ -30,6 +30,12 @@
 			"addr": "19NWYQitRdrn84hE5u29LbVv127ytaZpRf",
 			"desc": "PeaceGeeks is a global non-profit, volunteer organization that builds the technological, communications and management capacities of grassroots organizations working on the promotion of peace, accountability and human rights.",
 			"web": "http://peacegeeks.org"
+		},
+		"pizza": {
+			"name": "Pizza for the Homeless",
+			"addr": "16wrTxqhG1gRyXRdYA6kaSkVxfNvi5mWKe",
+			"desc": "An anonymous donor inspired Pizza for Coins to start a fund that will collect Bitcoins, and once per week, or month, or simply whenever there is enough money in it, they will send out Delivery food to a homeless shelter.",
+			"web": "http://pizzaforcoins.com/pizza-for-homeless"
 		},
 		"riseup": {
 			"name": "RiseUp",
