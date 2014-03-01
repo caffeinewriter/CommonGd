@@ -43,6 +43,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/about', routes.about);
+app.get('/charities', routes.charities);
 app.get('/buy/:prod/:charity', routes.buy);
 app.get('/download/:txid', routes.download);
 app.get('/order/:txid', routes.order);

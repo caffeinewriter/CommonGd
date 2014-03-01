@@ -25,6 +25,13 @@ exports.about = function(req, res){
 	res.render('about');
 }
 
+exports.charities = function(req,res){
+	res.render('charities', {
+		charities: config.charities.all,
+		charity: config.charities
+	});
+}
+
 exports.buy = function(req, res){
 	var D = new Date();
 	var secret = crypto.createHash('sha256').update(Math.random()+D+'').digest('hex');

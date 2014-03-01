@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.row
+		h1 The Charities
+	hr
+	- for (i=0;i<charities.length;i++)
+		.row
+			h3 
+				a(href=charity[charities[i]].web) #{charity[charities[i]].name}
+			p #{charity[charities[i]].desc}
+			p Donation Address: #{charity[charities[i]].addr}
+		hr

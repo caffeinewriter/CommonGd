@@ -14,7 +14,7 @@ block content
 				button.btn.btn-success.btn-sm.dropdown-toggle(data-toggle='dropdown', type='button') &#579;#{prod.price}
 					span.caret
 				ul.dropdown-menu
-					- for (i=0;i<charities.length-1;i++)
+					- for (i=0;i<charities.length;i++)
 						li
 							a(href='/buy/'+prod.id+'/'+charities[i]) #{charity[charities[i]].name}
 					li
