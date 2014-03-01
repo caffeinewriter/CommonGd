@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var QRCode = require('qrcode-npm');
 var Order = require('../order-model.js');
 var config = require('../config.json');
 var request = require('request');
@@ -27,7 +28,9 @@ exports.about = function(req, res){
 exports.buy = function(req, res){
 	var D = new Date();
 	var secret = crypto.createHash('sha256').update(Math.random()+D+'').digest('hex');
+	var secret = secret.substr(0,16);
 	var txid = crypto.createHash('sha256').update(Math.random()+secret+'').digest('hex');
+	var txid = txid.substr(0,16);
 	var pid = req.params.prod;
 	var charity = req.params.charity;
 	if (charity === "random") {
@@ -36,7 +39,8 @@ exports.buy = function(req, res){
 	var btcaddr = config.charities[charity].addr;
 	var baseurl = 'https://blockchain.info/api/receive?method=create&address=';
 	var baseurl = baseurl + btcaddr + '&callback=';
-	var baseurl = baseurl + config.url + '/return/' + txid + '/' + secret;
+	var baseurl = baseurl + encodeURIComponent(config.url + '/ipn/' + txid + '/' + secret);
+	console.error(baseurl)
 	config.pid = pid;
 	config.secret = secret;
 	config.txid = txid;
@@ -66,16 +70,21 @@ exports.order = function(req, res){
 		if(err) { 
 			return console.error(err); 
 		}
+		console.error(ord)
 		var prod = ord.prod;
 		console.error(prod);
 		console.error(ord.prod);
+		var qr = QRCode.qrcode(6,'H');
+		qr.addData('bitcoin:'+ord.toaddr+'?amount='+ord.price);
+		qr.make();
 		res.render('order', { 
 			toaddr: ord.toaddr, 
 			name: config.products[prod].name,
 			price: ord.price,
 			stat: ord.stat,
 			txid: ord.txid,
-			title: 'Order ' + ord.txid + ' | Common.gd'
+			title: 'Order ' + ord.txid + ' | Common.gd',
+			qrcodeurl: qr.createImgTag(4)
 		});
 	});
 }
@@ -107,17 +116,18 @@ exports.ipn = function(req, res){
 				return;
 			}
 			else {
-				Order.update({txid: ord.txid}, function(err,ord) {
-					ord.inputtx = incomingtx;
-					ord.txhash = outgoingtx;
-					ord.stat = 1;
-					ord.save(function(err) {
-						if(err) {
-							res.send('*error*');
-							return;
-						}
-						res.send('*ok*');
-					});
+				Order.update({
+					txid: ord.txid
+				}, {
+					inputtx: incomingtx,
+					txhash: outgoingtx,
+					stat: 1
+				},function(err) {
+					if(err) {
+						res.send('*error*');
+						return;
+					}
+					res.send('*ok*');
 				});
 			}
 		});

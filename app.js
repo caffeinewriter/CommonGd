@@ -47,6 +47,7 @@ app.get('/buy/:prod/:charity', routes.buy);
 app.get('/download/:txid', routes.download);
 app.get('/order/:txid', routes.order);
 app.get('/return/:txid/:secret', routes.ipn);
+app.get('/ipn/:txid/:secret', routes.ipn)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

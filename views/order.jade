@@ -4,7 +4,9 @@ block content
 	h3= name
 	h4 Order #{txid}
 	if (stat===0)
-		p Please send &#579;#{price} to #{toaddr}. Be sure to save your order number for your records.
+		p Please send &#579;#{price} to #{toaddr}. Be sure to save your order number for your records.</br>Your order will be processed after one confirmation.</br>
+		a(href='bitcoin:'+toaddr+'?amount='+price)
+			!= qrcodeurl
 		button.btn.btn-info(onClick='document.location.reload()') Refresh
 	else if (stat===1)
 		p Thanks for your payment!
