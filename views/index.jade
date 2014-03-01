@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.row
+		h1(style='margin-left:20px;') <img src='/images/logo.png' style='width:40px;height:40px;' />Common Good
+	hr
+	- each prod in products
+		.row
+			.col-lg-3
+				img(src=prod.img)
+			.col-lg-9
+				h3= prod.name
+				p= prod.desc
+				button.btn.btn-success.btn-sm.dropdown-toggle(data-toggle='dropdown', type='button') &#579;#{prod.price}
+					span.caret
+				ul.dropdown-menu
+					- for (i=0;i<charities.length-1;i++)
+						li
+							a(href='/buy/'+prod.id+'/'+charities[i]) #{charity[charities[i]].name}
+					li
+						a(href='/buy/'+prod.id+'/random') Random Charity
+		hr

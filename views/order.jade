@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h3= name
+	h4 Order #{txid}
+	if (stat===0)
+		p Please send &#579;#{price} to #{toaddr}. Be sure to save your order number for your records.
+		button.btn.btn-info(onClick='document.location.reload()') Refresh
+	else if (stat===1)
+		p Thanks for your payment!
+		a(href='/download/'+txid)
+			button.btn.btn-info Download
+	else
+		p Sorry, you've already downloaded this purchase. Please email brandon(at)brandonanzaldi.com if you have any problems. Be sure to reference your order number.
+	hr

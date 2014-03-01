@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+	body
+		.navbar.navbar-inverse.navbar-fixed-top
+			.container
+				.navbar-header
+					button.navbar-toggle(data-target='.navbar-collapse', data-toggle='collapse', type='button')
+					a.navbar-brand(href='/') Common Good
+				.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href='/') Home
+						li
+							a(href='/about') About Us
+		.container
+			.spacer(style='height:50px;')
+			block content
+			.row
+				.col-lg-12
+					p.
+						Created by <a href="http://brandonanzaldi.com/">Brandon Anzaldi</a> | Donate Bitcoins: 1CrYpTopYiQqZcJoAmYvfNShJdeQfAKVZq
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='/javascripts/bootstrap.min.js')
