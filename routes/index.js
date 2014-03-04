@@ -28,7 +28,8 @@ exports.about = function(req, res){
 exports.charities = function(req,res){
 	res.render('charities', {
 		charities: config.charities.all,
-		charity: config.charities
+		charity: config.charities,
+		title: 'Charities | Common.gd'
 	});
 }
 

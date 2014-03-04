@@ -1,7 +1,7 @@
 Common.GD
 =========
 
-This is a charitable shop, for lack of a better description. It allows you to add both shops and charities through a JSON file. It is available at [Common.gd](http://common.gd). The site is a functional beta. It utilizes Blockchain.info's [Receive Payments API](https://blockchain.info/api/api_receive) to process and forward payments to their respective charities, and MongoDB with Mongoose to manage data.
+This is a charitable shop, for lack of a better description. It allows you to add both shops and charities through a JSON file. It is available at [Common.gd](http://common.gd). The site is a functional beta. It utilizes Blockchain.info's [Receive Payments API](https://blockchain.info/api_receive) to process and forward payments to their respective charities, and MongoDB with Mongoose to manage data.
 
 ##Configuration Instructions
 

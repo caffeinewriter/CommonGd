@@ -4,7 +4,7 @@ block content
 	h3= name
 	h4 Order #{txid}
 	if (stat===0)
-		p Please send &#579;#{price} to #{toaddr}. Be sure to save your order number for your records.</br>Your order will be processed after one confirmation.</br>
+		p Please send &#579;<code>#{price}</code> or more to <code>#{toaddr}</code>.</br>Be sure to save your order number for your records.</br>Your order will be processed after one confirmation.</br>
 		a(href='bitcoin:'+toaddr+'?amount='+price)
 			!= qrcodeurl
 		button.btn.btn-info(onClick='document.location.reload()') Refresh
@@ -13,5 +13,5 @@ block content
 		a(href='/download/'+txid)
 			button.btn.btn-info Download
 	else
-		p Sorry, you've already downloaded this purchase. Please email brandon(at)brandonanzaldi.com if you have any problems. Be sure to reference your order number.
+		p Sorry, you've already downloaded this purchase. Please email brandon&#64;common.gd if you have any problems. Be sure to reference your order number.
 	hr

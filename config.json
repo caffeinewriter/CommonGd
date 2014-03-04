@@ -16,7 +16,7 @@
 		"bitcoin100": {
 			"name": "Bitcoin100",
 			"addr": "1BTC1oo1J3MEt5SFj74ZBcF2Mk97Aah4ac",
-			"desc": "Bitcoin100 exists specifically to convince new charities to start accepting bitcoin donations by helping them get their first Bitcoin donations.",
+			"desc": "Bitcoin100 exists specifically to convince new charities to start accepting Bitcoin donations by helping them get their first Bitcoin donations.",
 			"web": "http://bitcoin100.org"
 		},
 		"fsf": {
@@ -52,12 +52,20 @@
 	},
 	"products": {
 		"1": {
-			"name": "Test",
-			"price": 0.001,
-			"desc": "This is a test product. Nothing to see here.",
-			"file": "http://placekitten.com/g/200/200/",
-			"img": "http://placekitten.com/g/200/200/",
+			"name": "The Bitcoin Machine",
+			"price": 0.02,
+			"desc": "Learn how to get the most out of your cryptocurrency investments with this informative eBook. Learn the secrets of the masters, and begin your journey onto the path to riches.",
+			"file": "http://ubuntuone.com/2aEieJcf8A4PGIZFrKrhYB",
+			"img": "http://i.imgur.com/qhDAMg1.png?1?1541",
 			"id": 1
+		},
+		"2": {
+			"name": "Donation",
+			"price": 0.001,
+			"desc": "Just a way for you to donate some Bitcoins to the charity of your choice. Either that, or you could click random, and do a little bit of random good.",
+			"file": "http://i.imgur.com/MIruLsl.png",
+			"img": "http://placekitten.com/g/200/200",
+			"id": 2
 		}
 	}
 }

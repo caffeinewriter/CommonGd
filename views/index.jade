@@ -16,7 +16,7 @@ block content
 				ul.dropdown-menu
 					- for (i=0;i<charities.length;i++)
 						li
-							a(href='/buy/'+prod.id+'/'+charities[i]) #{charity[charities[i]].name}
+							a(href='/buy/'+prod.id+'/'+charities[i], rel='nofollow') #{charity[charities[i]].name}
 					li
-						a(href='/buy/'+prod.id+'/random') Random Charity
+						a(href='/buy/'+prod.id+'/random', rel='nofollow') Random Charity
 		hr
